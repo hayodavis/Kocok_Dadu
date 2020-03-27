@@ -3,10 +3,12 @@ package com.davis.kocokdadu
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.ImageView
 
 class MainActivity : AppCompatActivity() {
+
+    // aktifkan gambar dadu
+    lateinit var gambarDadu: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -16,20 +18,24 @@ class MainActivity : AppCompatActivity() {
         val tombolKocok: Button = findViewById(R.id.tombol_kocok)
 
         tombolKocok.setOnClickListener{ kocokDadu() }
+        gambarDadu = findViewById(R.id.gambar_dadu)
     }
 
     // buat fungsi kocok dadu
     private fun kocokDadu(){
-        // buat variabel untuk nilai acak
-        val randomInt = (1..6).random()
+        // buat variabel untuk angka acak
+        val angkaAcak = (1..6).random()
 
-        // tampilkan pesan mengambang di layar
-        Toast.makeText(this, "Tombol ditekan",
-        Toast.LENGTH_SHORT).show()
+        // memilih dadu sesuai nomor
+        val sumberGambar = when (angkaAcak){
+            1 -> R.drawable.dadu_1
+            2 -> R.drawable.dadu_2
+            3 -> R.drawable.dadu_3
+            4 -> R.drawable.dadu_4
+            5 -> R.drawable.dadu_5
+            else -> R.drawable.dadu_6
+        }
 
-        // aktifkan tekview hasil
-        val textHasil: TextView = findViewById(R.id.text_hasil)
-        // mengganti textview
-        textHasil.text = randomInt.toString()
+        gambarDadu.setImageResource(sumberGambar)
     }
 }
