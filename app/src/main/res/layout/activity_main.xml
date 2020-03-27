@@ -17,6 +17,14 @@
         app:srcCompat="@drawable/dadu_1"
         tools:src="@drawable/dadu_kosong"/>
     
+    <ImageView
+        android:id="@+id/gambar_daduke2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        app:srcCompat="@drawable/dadu_1"
+        tools:src="@drawable/dadu_kosong"/>
+    
     <Button
         android:id="@+id/tombol_kocok"
         android:layout_width="wrap_content"
