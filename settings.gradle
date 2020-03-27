@@ -1,0 +1,2 @@
+rootProject.name='Kocok Dadu'
+include ':app'
